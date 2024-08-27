@@ -1,0 +1,43 @@
+﻿@model List<KeyVaultSecretModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">List of all your Azure Key Vault secrets :</h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Secret Name</th>
+                <th scope="col">Secret Value</th>
+                <th scope="col">Delete secret</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model is not null && Model.Any())
+            {
+                int num = 0;
+
+                foreach(var item in Model)
+                {
+                    num += 1;
+
+                    <tr>
+                        <th scope="row">@num</th>
+                        <td>@item.SecretName</td>
+                        <td>
+                            <a asp-action="Details" asp-route-secretName="@item.SecretName" class="btn btn-light">View value</a>
+                        </td>
+                        <td>
+                            <form asp-action="Delete" asp-route-secretName="@item.SecretName" method="post">
+                                <input type="submit" class="btn btn-light" value="Delete" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

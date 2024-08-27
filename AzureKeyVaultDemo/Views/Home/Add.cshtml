@@ -1,0 +1,16 @@
+﻿@model KeyVaultSecretModel
+
+<div>
+    <form method="post" asp-action="Add">
+        <div class="mb-3">
+            <label asp-for="SecretName" class="form-label">Secret Name</label>
+            <input asp-for="SecretName" type="text" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SecretValue" for="exampleInputPassword1" class="form-label">Secret Value</label>
+            <input asp-for="SecretValue" type="text" class="form-control" required>
+        </div>
+        <div asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

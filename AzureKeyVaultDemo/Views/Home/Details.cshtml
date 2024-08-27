@@ -1,0 +1,12 @@
+﻿@model KeyVaultSecretModel
+
+<div>
+    <div class="mb-3">
+        <label asp-for="SecretName" class="form-label">Secret Name</label>
+        <input asp-for="SecretName" type="text" class="form-control" required readonly>
+    </div>
+    <div class="mb-3">
+        <label asp-for="SecretValue" class="form-label">Secret Value</label>
+        <input asp-for="SecretValue" type="text" class="form-control" required readonly>
+    </div>
+</div>
