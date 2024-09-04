@@ -9,8 +9,11 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Id</th>
                 <th scope="col">Secret Name</th>
+                <th scope="col">Created On</th>
+                <th scope="col">Expires On</th>
+                <th scope="col">Enabled</th>
                 <th scope="col">Secret Value</th>
                 <th scope="col">Delete secret</th>
             </tr>
@@ -18,17 +21,16 @@
         <tbody>
             @if(Model is not null && Model.Any())
             {
-                int num = 0;
-
                 foreach(var item in Model)
                 {
-                    num += 1;
-
                     <tr>
-                        <th scope="row">@num</th>
-                        <td>@item.SecretName</td>
+                        <td>@item.Id</td>
+                        <td scope="row">@item.SecretName</td>
+                        <td>@item.CreatedOn</td>
+                        <td>@item.ExpiresOn</td>
+                        <td>@item.Enabled</td>
                         <td>
-                            <a asp-action="Details" asp-route-secretName="@item.SecretName" class="btn btn-light">View value</a>
+                            <a asp-action="Details" asp-route-secretName="@item.SecretName" class="btn btn-light">View</a>
                         </td>
                         <td>
                             <form asp-action="Delete" asp-route-secretName="@item.SecretName" method="post">
