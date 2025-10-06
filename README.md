@@ -10,7 +10,7 @@
 
 ---
 
-## 🎥 Resources
+## 🎥 Learning Resources
 - ▶️ [Introduction to Azure Key Vault](https://www.youtube.com/watch?v=JDRixckApxM&list=PLMWaZteqtEaKUh7lI8qqiaf5KScGtHbFq)  
 
 ---
