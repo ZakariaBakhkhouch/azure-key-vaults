@@ -1,4 +1,4 @@
-# 🔐 Azure Key Vault
+# 🚀 Azure Key Vault
 
 ✨ This README gives you quick access to official Azure resources and tutorials for **Azure Key Vault**.
 
